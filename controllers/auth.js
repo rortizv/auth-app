@@ -40,9 +40,6 @@ const crearUsuario = async(req, res = response) => {
             email,
             token
         });
-
-    
-
         
     } catch (error) {
         console.log(error);
@@ -66,7 +63,7 @@ const loginUsuario = async(req, res = response) => {
         if(  !dbUser ) {
             return res.status(400).json({
                 ok: false,
-                msg: 'El correo no existe'
+                msg: 'El correo o el password son inválidos'
             });
         }
 
@@ -76,7 +73,7 @@ const loginUsuario = async(req, res = response) => {
         if ( !validPassword ) {
             return res.status(400).json({
                 ok: false,
-                msg: 'El password no es válido'
+                msg: 'El correo o el password son inválidos'
             });
         }
 

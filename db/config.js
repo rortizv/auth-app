@@ -12,12 +12,12 @@ const dbConnection = async() => {
             useCreateIndex: true
         });
 
-        console.log('DB Online');
+        console.log('MongoDB connected');
 
 
     } catch (error) {
         console.log(error);
-        throw new Error('Error a la hora de inicializad DB');
+        throw new Error('Error al conectar a MongoDB');
     }
 
 
